@@ -1,0 +1,390 @@
+/***********************************
+O jogo da memória Memory Bloc, tem como objetivo desenvolver a capacidade de memória do e
+concentração do jogador através da memorização de letras com um certo limite de tempo que serão
+exibidos na tela. O jogador será desafiado a memorizar o máximo de letras para que assim consiga
+avançar de nível e chegue até final.
+O jogo possui cinco fases, à medida que o jogador for avançado, o nível de dificuldade é elevado,
+levando assim o jogador a ser desafiado a cada fase.
+Autores: Hellen Cristina Andrade, Joao Vitor Botrel, Quezia Adla Freitas
+Data da ultima atualização: 25.06.22
+
+***********************************/
+
+//Bibliotecas Utilizadas 
+#include <stdio.h>
+#include <stdlib.h>
+#include "conio.h" // utilizamos para personalizar o jogo
+
+//Declaração dos protótipos das funções 
+int fase1();
+int fase2();
+int fase3();
+int fase4();
+int fase5();
+void creditos ();
+int saida ();
+int menu();
+int desenho();
+int ranking();
+
+//função principal
+int main(){
+_setcursortype(0);
+
+
+//Chamada das funções de fora da main
+desenho();
+menu();
+gotoxy(69, 15);
+
+
+
+
+
+
+
+    //tirar o return da tela
+
+
+
+    textcolor(0);
+
+    return 0;
+}
+
+
+int saida (){
+ exit(0);
+}
+
+/*Função créditos 
+Parâmetro de entrada: Não tem (void)
+objetivo: Imprimir os créditos do jogo
+Retorno: não tem (void)
+*/
+void creditos(){
+ int opcaoc;
+ textcolor(2);
+ printf("\nAutores: Hellen Cristina, Joao Vitor Botrel e Quezia Adla Freitas");
+ printf("\nAperte 1 para voltar para o menu.");
+ printf("\n");
+ scanf(" %d", &opcaoc);
+ switch (opcaoc){
+ case 1:
+    clrscr();
+    desenho();
+    menu();
+    break;
+ default:
+    printf("Opcao invalida");
+
+ }
+
+}
+/* Funções a serem desenvolvidas
+parâmetro de entrada: Ainda não tem
+objetivo: Imprimir as letras em cada fase
+Retorno: Ainda não tem
+*/
+int fase1(){
+}
+
+int fase2(){
+}
+int fase3(){
+}
+int fase4(){
+}
+int fase5(){
+}
+/* Função ranking que iremos implementar
+parâmetro de entrada: Ainda não tem
+objetivo: Imprimir o ranking de cada jogador
+retorno: Ainda não tem
+*/
+int raking(){
+ printf("Ranking: ");
+}
+
+/*Função do menu
+parâmetro de entrada: Ainda não tem
+objetivo:Possibilitar que o usuário acesse cada uma das opções do menu
+retorno: Ainda não tem
+*/
+
+int menu(){
+ int opcao;
+ gotoxy(63,15); printf("OPCAO: ");
+ scanf(" %d", &opcao);
+ switch (opcao){
+   case 1: //Opção para jogar 
+ clrscr();
+ gotoxy(1,1);
+ printf("Jogando"); 
+ break;
+   case 2: //Opção para sair do jogo
+    clrscr();
+    saida();
+    break;
+   case 3: // Opção para o ranking
+    clrscr();
+ gotoxy(1,1);
+ creditos();
+ break;
+   case 4: //Opção para os créditos 
+    clrscr();
+
+    break;
+   default:
+    printf("Opcao invalida");
+
+
+
+ } while (opcao);
+
+}
+/*Função para personalizar o menu 
+parâmetro de entrada: Ainda não tem
+objetivo: Personalizar a tela do menu utilizando a biblioteca conio.h
+retorno: Ainda não tem
+*/
+int desenho(){
+
+textcolor(3);
+
+ //Opcoes do Menu
+ for(int x = 4; x<24; x++){
+gotoxy(62,x); printf("%c", 179);
+ }
+gotoxy(63,4); printf("======MENU=======");
+gotoxy(63,7); printf("(1)JOGAR");
+gotoxy(63,9); printf("(2)SAIR");
+gotoxy(63,11); printf("(3)CREDITOS");
+gotoxy(63,13); printf("(4)RANKING");
+
+
+
+
+ //LETRA Y
+  for (int x=5; x<7; x++){
+    gotoxy(53, x); printf("%c", 179);
+    gotoxy(60, x); printf("%c", 179);
+  }
+  for (int x=54; x<60; x++){
+    gotoxy(x, 7); printf("%c", 196);
+  }
+  gotoxy(53, 7); printf("%c", 192);
+  gotoxy(60, 7); printf("%c", 217);
+  gotoxy(57, 8); printf("%c", 179);
+  gotoxy(57, 9); printf("%c", 179);
+
+
+
+  //LETRA R
+  for (int x=45; x<51; x++){
+    gotoxy(x, 4); printf("%c", 196);
+    gotoxy(x, 7); printf("%c", 196);
+  }
+
+  for (int x=5; x<7; x++){
+    gotoxy(44, x); printf("%c", 179);
+    gotoxy(51, x); printf("%c", 179);
+  }
+
+
+
+  gotoxy(44, 4); printf("%c", 218);
+  gotoxy(44, 7); printf("%c", 192);
+  gotoxy(51, 4); printf("%c", 191);
+  gotoxy(51, 7);printf("%c", 217);
+  gotoxy(44, 8); printf("%c", 179);
+  gotoxy(44, 9); printf("%c", 179);
+  gotoxy(51, 8); printf("%c", 179);
+  gotoxy(51, 9); printf("%c", 179);
+  //LETRA O
+
+  for (int x=5; x<9; x++){
+    gotoxy(35, x);printf("%c", 179);
+    gotoxy(42, x);printf("%c", 179);
+  }
+
+  for (int x=36; x<42; x++){
+    gotoxy(x,4); printf("%c", 196);
+    gotoxy(x,9); printf("%c", 196);
+
+  }
+
+  gotoxy(35,4); printf("%c", 218);
+  gotoxy(35, 9); printf ("%c", 192);
+  gotoxy(42, 4);printf("%c", 191);
+  gotoxy(42, 9); printf("%c", 217);
+
+
+
+
+
+   // LETRA M
+   for(int x = 5; x<10;x++){
+    gotoxy(25,x);printf("%c",179);
+    gotoxy(33,x);printf("%c",179);
+    }
+    for(int z = 5; z<8;z++){
+    gotoxy(28,z);printf("%c",179);
+   gotoxy(30,z);printf("%c",179);}
+
+   gotoxy(26,4);printf("%c",196);
+   gotoxy(27,4);printf("%c",196);
+   gotoxy(31,4);printf("%c",196);
+   gotoxy(32,4);printf("%c",196);
+   gotoxy(29,8);printf("%c",196);
+
+
+    gotoxy(25,4);printf("%c",218);
+    gotoxy(28,4);printf("%c",191);
+    gotoxy(28,8);printf("%c",192);
+    gotoxy(30,8);printf("%c",217);
+    gotoxy(30,4);printf("%c",218);
+    gotoxy(33,4);printf("%c",191);
+
+
+
+
+
+
+    // LETRA E
+
+     for(int x = 17; x<24; x++){
+    gotoxy(x,4); printf("%c",196);
+    gotoxy(x,6); printf("%c",196);
+    gotoxy(x,9); printf("%c",196);
+    }
+    for(int y = 5;y<9;y++){
+    gotoxy(16,y);printf("%c",179);
+    }
+    gotoxy(16,9); printf("%c",192);
+    gotoxy(16,4); printf("%c", 218);
+
+
+
+
+    //Letra M
+
+    for(int x = 5; x<10;x++){
+    gotoxy(6,x);printf("%c",179);
+    gotoxy(14,x);printf("%c",179);
+    }
+    for(int z = 5; z<8;z++){
+    gotoxy(11,z);printf("%c",179);
+    gotoxy(9,z);printf("%c",179);}
+
+   gotoxy(7,4);printf("%c",196);
+   gotoxy(8,4);printf("%c",196);
+   gotoxy(12,4);printf("%c",196);
+   gotoxy(13,4);printf("%c",196);
+   gotoxy(10,8);printf("%c",196);
+   gotoxy(11,8);printf("%c",196);
+
+
+    gotoxy(11,4);printf("%c",218);
+    gotoxy(9,4);printf("%c",191);
+    gotoxy(9,8);printf("%c",192);
+    gotoxy(11,8);printf("%c",217);
+    gotoxy(6,4);printf("%c",218);
+    gotoxy(14,4);printf("%c",191);
+
+
+
+     //Letra C
+
+    for(int x = 42; x<51; x++){
+    gotoxy(x,16); printf("%c",196);
+    gotoxy(x,23); printf("%c",196);
+    }
+    for(int y = 17;y<23;y++){
+    gotoxy(41,y);printf("%c",179);
+
+    }
+    gotoxy(51,23);printf("%c",217);
+    gotoxy(41,16);printf("%c",218);
+    gotoxy(51,16);printf("%c",191);
+    gotoxy(41,23);printf("%c",192);
+
+
+     //letra O
+
+    for(int x = 27; x<39; x++){
+    gotoxy(x,16); printf("%c",196);
+    gotoxy(x,23); printf("%c",196);
+    }
+    for(int y = 17;y<23;y++){
+    gotoxy(27,y);printf("%c",179);
+    gotoxy(39,y);printf("%c",179);
+    }
+    gotoxy(39,23);printf("%c",217);
+    gotoxy(27,16);printf("%c",218);
+    gotoxy(39,16);printf("%c",191);
+    gotoxy(27,23);printf("%c",192);
+
+
+
+    //letra L
+
+      for(int y = 16;y<23;y++){
+       gotoxy(18,y);printf("%c",179);}
+      for(int y = 19; y<26;y++){
+      gotoxy(y,23);printf("%c",196);}
+
+      gotoxy(18,23);printf("%c",192);
+
+
+    //letra B
+    for(int x = 7; x<16; x++){
+    gotoxy(x,16); printf("%c",196);
+    gotoxy(x,23); printf("%c",196);
+    }
+    for(int y = 17;y<23;y++){
+    gotoxy(6,y);printf("%c",179);
+    gotoxy(16,y);printf("%c",179);
+    }
+    gotoxy(16,23);printf("%c",217);
+    gotoxy(6,16);printf("%c",218);
+    gotoxy(16,16);printf("%c",191);
+    gotoxy(6,23);printf("%c",192);
+    for(int x = 7; x<16; x++){
+    gotoxy(x,19); printf("%c",196);}
+
+
+//Quadrado maior
+for(int x = 4;x<80;x++){
+    gotoxy(x,2); printf("%c",196);
+    gotoxy(x,25); printf("%c",196);}
+    for(int x = 2;x<25;x++){
+    gotoxy(3,x); printf("%c",179);
+    gotoxy(80,x); printf("%c",179);}
+
+    gotoxy(3,2);printf("%c",218);
+    gotoxy(80,2);printf("%c",191);
+    gotoxy(3,25);printf("%c",192);
+    gotoxy(80,25);printf("%c",217);
+
+
+    gotoxy(1,1);
+
+    //quadrado menor dentro do maior
+    for(int x = 5;x<79;x++){
+    gotoxy(x,3); printf("%c",196);
+    gotoxy(x,24); printf("%c",196);}
+    for(int x = 4;x<24;x++){
+    gotoxy(4,x); printf("%c",179);
+    gotoxy(79,x); printf("%c",179);}
+
+    gotoxy(4,3);printf("%c",218);
+    gotoxy(79,3);printf("%c",191);
+    gotoxy(4,24);printf("%c",192);
+    gotoxy(79,24);printf("%c",217);
+
+return 0;
+
+
+
+}
